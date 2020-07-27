@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Quote from "./QuoteComponent.jsx";
 
 class App extends Component{
     render(){
         return(
-            <div>
-                <h1>Hi React. Im fine and you?</h1>
+            <Fragment>
                 <Quote />
-            </div>
+            </Fragment>
         )
     }
 }
