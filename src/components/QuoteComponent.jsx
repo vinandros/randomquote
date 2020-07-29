@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { storeNewQuote } from "../Redux/Actions/Quote.Action";
+import logo from "../img/logo.png";
 
 class QuoteComponent extends Component {
     constructor(props){
@@ -12,15 +13,38 @@ class QuoteComponent extends Component {
     requestQuote(){
         this.props.storeNewQuote({quote:this.props.quote,author:this.props.author,loading:true});
         setTimeout(()=>{
-            fetch( "http://quotes.stormconsultancy.co.uk/random.json")
-            .then(response => response.json())
-            .then(data => this.props.storeNewQuote({quote:data.quote,author:data.author,loading:false}));
-        },0)
+            try {
+                fetch("http://quotes.stormconsultancy.co.uk/random.json")
+                .then(response => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+                })
+                .then(data => {
+                   
+                    this.props.storeNewQuote({quote:data.quote,author:data.author,loading:false})
+                
+                })
+                .catch(error => console.error(error));
+            } catch (error) {
+                console.log("asdfasdfsd")
+            }
+            
+        },120)
          
     }
 
     handleOnClick(){
+        // const element = document.querySelectorAll(".fade");
+        // element.forEach( elem => elem.classList.remove("fade"));
+        // element.forEach( elem => void elem.offsetWidth);
+        // element.forEach( elem => elem.classList.add("fade"));
         this.requestQuote();
+        const element = document.querySelectorAll(".fade");
+        element.forEach( elem => elem.classList.remove("fade"));
+        element.forEach( elem => void elem.offsetWidth);
+        element.forEach( elem => elem.classList.add("fade"));
     }
     componentDidMount() {
         this.requestQuote();
@@ -28,16 +52,14 @@ class QuoteComponent extends Component {
     render() {
         return (
             <div id="quote">
-                {
-                    this.props.loading ? <div id="loading"> <div id="loader"></div> </div> : 
-                    <div id="container">
-                        <div><p>"{this.props.quote}"</p></div>
-                        <div><p>by {this.props.author}</p></div>
-                        <div id="btn-g"><button className="btn" onClick={this.handleOnClick}><p>New Quote</p></button></div>
-                    </div>
-                }
+                <div id="text" className="fade"><p>{'"'+this.props.quote+'"'}</p></div>
+                <div id="author" className="fade"><p>-- {this.props.author}</p></div>
                 
                
+                <div id="footer-flex">
+                    <a id="tweet-quote" href={"http://twitter.com/intent/tweet?hashtags=quotes&text="+encodeURIComponent('"' + this.props.quote + '" ' + this.props.author)}><img id="tweet-quote-img" src={logo} alt="Twiter"/></a>
+                    <button id="new-quote" className="btn" onClick={this.handleOnClick}><p>New Quote</p></button>
+                </div>
             </div>
         )
     }

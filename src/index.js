@@ -15,6 +15,6 @@ class Wrapper extends Component {
     }
 }
 
-ReactDOM.render(<Wrapper />, document.getElementById("root"));
+ReactDOM.render(<Wrapper />, document.getElementById("quote-box"));
 
 
