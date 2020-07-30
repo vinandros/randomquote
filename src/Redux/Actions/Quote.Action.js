@@ -1,13 +1,23 @@
-const STORE_NEW_QUOTE = "STORE_NEW_QUOTE";
+export const FETCH_QUOTE_PENDING = 'FETCH_QUOTE_PENDING';
+export const FETCH_QUOTE_SUCCESS = 'FETCH_QUOTE_SUCCESS';
+export const FETCH_QUOTE_ERROR = 'FETCH_QUOTE_ERROR';
 
-const storeNewQuote = ( quoteData ) =>{
+export function fetchQuotePending() {
     return {
-        type:STORE_NEW_QUOTE,
-        data:quoteData
+        type: FETCH_QUOTE_PENDING
     }
 }
 
-export {
-    storeNewQuote,
-    STORE_NEW_QUOTE
+export function fetchQuoteSuccess(quote) {
+    return {
+        type: FETCH_QUOTE_SUCCESS,
+        payload: quote
+    }
+}
+
+export function fetchQuoteError(error) {
+    return {
+        type: FETCH_QUOTE_ERROR,
+        payload: error
+    }
 }
