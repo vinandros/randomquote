@@ -4,7 +4,7 @@ function fetchQuote() {
     return dispatch => {
         setTimeout(()=>{
             dispatch(fetchQuotePending());
-            fetch('http://quotes.stormconsultancy.co.uk/random.json')
+            fetch('https://quotes.stormconsultancy.co.uk/random.json')
             .then(res => res.json())
             .then(res => {
                 if(res.error) {

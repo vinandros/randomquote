@@ -1,112 +1,109 @@
-$background-color:linear-gradient(#a5d6a7,#81d4fa);
+$background-color: linear-gradient(#a5d6a7, #81d4fa);
 // $box-shadow-color:#81d4fa;
-$box-shadow-color:#b8b8b8;
+$box-shadow-color: #b8b8b8;
 // $background-color:linear-gradient(#e9b5ff,#c5ffbd);
 // $background-quote:white;
 // $background-color:linear-gradient(180deg, rgba(238,174,202,0.48230630142682074) 9%, rgba(20,80,150,1) 91%);
 
-
-$background-quote:white;
+$background-quote: white;
 $text-shadow-color: #222222;
 
-
-
 @font-face {
-    font-family: 'serif';
-    src: url('ptserif-regular-webfont.woff2') format('woff2'),
-         url('ptserif-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "serif";
+  src: url("ptserif-regular-webfont.woff2") format("woff2"),
+    url("ptserif-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-body{
-    font-size: 1.5rem;
-    font-family: 'serif',cursive;
-    text-align: justify;
-    line-height: 50px;
-    background: $background-color;
-    height: 100vh;
-    padding: 10%;
-    
+body {
+  font-size: 1.5rem;
+  font-family: "serif", cursive;
+  text-align: justify;
+  line-height: 50px;
+  background: $background-color;
+  height: 100vh;
+  padding: 10%;
 }
 
-#quote{
-    background-color: $background-quote;
-    text-align: center;
-    border-radius: 3px;
-    width: 50vw;
-    margin: 0 auto;
-    height: auto;
-    max-height: auto;
-    box-shadow: 0px 0px 8px 2px $box-shadow-color;
-    padding: 1.5rem;
-    
+#quote {
+  background-color: $background-quote;
+  text-align: center;
+  border-radius: 3px;
+  width: 50vw;
+  margin: 0 auto;
+  height: auto;
+  max-height: auto;
+  box-shadow: 0px 0px 8px 2px $box-shadow-color;
+  padding: 1.5rem;
 }
 
-@media(max-width:740px){
-    #quote{
-        width: 90vw;
-    }
-    body{
-        padding: 5%;
-    }
+@media (max-width: 740px) {
+  #quote {
+    width: 90vw;
+  }
+  body {
+    padding: 5%;
+  }
 }
 
-#footer-flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0rem 0rem 2rem 0rem ;
-    
+#footer-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 0rem 2rem 0rem;
 }
 
-.btn{
-    background: $background-color;
-    border-radius: 3px;
-    border-style: none;
-    box-shadow: 0px 0px 8px 2px $box-shadow-color;
-    height: 50px;
-    width: 130px;
-    font-family: ranchersregular;
-    font-size: 1.3rem;
-    cursor: pointer;
+.btn {
+  background: $background-color;
+  border-radius: 3px;
+  border-style: none;
+  box-shadow: 0px 0px 8px 2px $box-shadow-color;
+  height: 50px;
+  width: 130px;
+  font-family: ranchersregular;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
-p{
-    text-shadow: 1px 0px 4px $text-shadow-color;
+.textDecoration {
+  text-shadow: 1px 0px 4px $text-shadow-color;
 }
 
-#tweet-quote-img{
-    max-width: 100%;
-    height:auto;
+#tweet-quote-img {
+  max-width: 100%;
+  height: auto;
 }
 
-#tweet-quote{
-    padding: 5px 8px 5px 8px;
-    max-width:50px;
-    height:50px;
-    background: $background-color;
-    box-shadow: 0px 0px 8px 2px $box-shadow-color;
-    border-radius: 3px;
-    cursor: pointer;
+#tweet-quote {
+  padding: 5px 8px 5px 8px;
+  max-width: 50px;
+  height: 50px;
+  background: $background-color;
+  box-shadow: 0px 0px 8px 2px $box-shadow-color;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-#author{
-    font-size: 1.2rem;
-    font-style: italic;
-    text-align: right;
+#author {
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: right;
 }
 
-.fade{
-    animation: fadeIn;
-    animation-duration: 2s;
+.fade {
+  animation: fadeIn;
+  animation-duration: 2s;
 }
 
+#note {
+  font-size: 0.8rem;
+  text-align: left;
+}
